@@ -4,9 +4,9 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Asciidoctor 2.0.10">
+<meta name="generator" content="Asciidoctor 2.0.12">
 <meta name="author" content="Harsh Kapadia">
-<link rel="icon" type="image/x-icon" href="./src/images/favicon.ico">
+<link rel="icon" type="image/x-icon" href="./src/static/img/favicon.ico">
 <title>git_basics</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
@@ -49,7 +49,7 @@ textarea{overflow:auto;vertical-align:top}
 table{border-collapse:collapse;border-spacing:0}
 *,*::before,*::after{-moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-sizing:border-box}
 html,body{font-size:100%}
-body{background:#fff;color:rgba(0,0,0,.8);padding:0;margin:0;font-family:"Noto Serif","DejaVu Serif",serif;font-weight:400;font-style:normal;line-height:1;position:relative;cursor:auto;tab-size:4;-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased}
+body{background:#fff;color:rgba(0,0,0,.8);padding:0;margin:0;font-family:"Noto Serif","DejaVu Serif",serif;font-weight:400;font-style:normal;line-height:1;position:relative;cursor:auto;tab-size:4;word-wrap:anywhere;-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased}
 a:hover{cursor:pointer}
 img,object,embed{max-width:100%;height:auto}
 object,embed{height:100%}
@@ -64,10 +64,8 @@ img{-ms-interpolation-mode:bicubic}
 img,object,svg{display:inline-block;vertical-align:middle}
 textarea{height:auto;min-height:50px}
 select{width:100%}
-.center{margin-left:auto;margin-right:auto}
-.stretch{width:100%}
 .subheader,.admonitionblock td.content>.title,.audioblock>.title,.exampleblock>.title,.imageblock>.title,.listingblock>.title,.literalblock>.title,.stemblock>.title,.openblock>.title,.paragraph>.title,.quoteblock>.title,table.tableblock>.title,.verseblock>.title,.videoblock>.title,.dlist>.title,.olist>.title,.ulist>.title,.qlist>.title,.hdlist>.title{line-height:1.45;color:#7a2518;font-weight:400;margin-top:0;margin-bottom:.25em}
-div,dl,dt,dd,ul,ol,li,h1,h2,h3,#toctitle,.sidebarblock>.content>.title,h4,h5,h6,pre,form,p,blockquote,th,td{margin:0;padding:0;direction:ltr}
+div,dl,dt,dd,ul,ol,li,h1,h2,h3,#toctitle,.sidebarblock>.content>.title,h4,h5,h6,pre,form,p,blockquote,th,td{margin:0;padding:0}
 a{color:#2156a5;text-decoration:underline;line-height:inherit}
 a:hover,a:focus{color:#1d4b8f}
 a img{border:0}
@@ -107,19 +105,22 @@ h1{font-size:2.75em}
 h2{font-size:2.3125em}
 h3,#toctitle,.sidebarblock>.content>.title{font-size:1.6875em}
 h4{font-size:1.4375em}}
-table{background:#fff;margin-bottom:1.25em;border:solid 1px #dedede}
+table{background:#fff;margin-bottom:1.25em;border:solid 1px #dedede;word-wrap:normal}
 table thead,table tfoot{background:#f7f8f7}
 table thead tr th,table thead tr td,table tfoot tr th,table tfoot tr td{padding:.5em .625em .625em;font-size:inherit;color:rgba(0,0,0,.8);text-align:left}
 table tr th,table tr td{padding:.5625em .625em;font-size:inherit;color:rgba(0,0,0,.8)}
 table tr.even,table tr.alt{background:#f8f8f7}
-table thead tr th,table tfoot tr th,table tbody tr td,table tr td,table tfoot tr td{display:table-cell;line-height:1.6}
+table thead tr th,table tfoot tr th,table tbody tr td,table tr td,table tfoot tr td{line-height:1.6}
 h1,h2,h3,#toctitle,.sidebarblock>.content>.title,h4,h5,h6{line-height:1.2;word-spacing:-.05em}
 h1 strong,h2 strong,h3 strong,#toctitle strong,.sidebarblock>.content>.title strong,h4 strong,h5 strong,h6 strong{font-weight:400}
+.center{margin-left:auto;margin-right:auto}
+.stretch{width:100%}
 .clearfix::before,.clearfix::after,.float-group::before,.float-group::after{content:" ";display:table}
 .clearfix::after,.float-group::after{clear:both}
-:not(pre):not([class^=L])>code{font-size:.9375em;font-style:normal!important;letter-spacing:0;padding:.1em .5ex;word-spacing:-.15em;background:#f7f7f8;-webkit-border-radius:4px;border-radius:4px;line-height:1.45;text-rendering:optimizeSpeed;word-wrap:break-word}
-:not(pre)>code.nobreak{word-wrap:normal}
-:not(pre)>code.nowrap{white-space:nowrap}
+:not(pre).nobreak{word-wrap:normal}
+:not(pre).nowrap{white-space:nowrap}
+:not(pre).pre-wrap{white-space:pre-wrap}
+:not(pre):not([class^=L])>code{font-size:.9375em;font-style:normal!important;letter-spacing:0;padding:.1em .5ex;word-spacing:-.15em;background:#f7f7f8;-webkit-border-radius:4px;border-radius:4px;line-height:1.45;text-rendering:optimizeSpeed}
 pre{color:rgba(0,0,0,.9);font-family:"Droid Sans Mono","DejaVu Sans Mono",monospace;line-height:1.45;text-rendering:optimizeSpeed}
 pre code,pre pre{color:inherit;font-size:inherit;line-height:inherit}
 pre>code{display:block}
@@ -184,7 +185,7 @@ body.toc2.toc-right{padding-left:0;padding-right:20em}}
 #content #toc{border-style:solid;border-width:1px;border-color:#e0e0dc;margin-bottom:1.25em;padding:1.25em;background:#f8f8f7;-webkit-border-radius:4px;border-radius:4px}
 #content #toc>:first-child{margin-top:0}
 #content #toc>:last-child{margin-bottom:0}
-#footer{max-width:100%;background:rgba(0,0,0,.8);padding:1.25em}
+#footer{max-width:none;background:rgba(0,0,0,.8);padding:1.25em}
 #footer-text{color:rgba(255,255,255,.8);line-height:1.44}
 #content{margin-bottom:.625em}
 .sect1{padding-bottom:.625em}
@@ -207,7 +208,7 @@ table.tableblock #preamble>.sectionbody>[class="paragraph"]:first-of-type p{font
 .admonitionblock>table td.icon{text-align:center;width:80px}
 .admonitionblock>table td.icon img{max-width:none}
 .admonitionblock>table td.icon .title{font-weight:bold;font-family:"Open Sans","DejaVu Sans",sans-serif;text-transform:uppercase}
-.admonitionblock>table td.content{padding-left:1.125em;padding-right:1.25em;border-left:1px solid #dddddf;color:rgba(0,0,0,.6)}
+.admonitionblock>table td.content{padding-left:1.125em;padding-right:1.25em;border-left:1px solid #dddddf;color:rgba(0,0,0,.6);word-wrap:anywhere}
 .admonitionblock>table td.content>:last-child>:last-child{margin-bottom:0}
 .exampleblock>.content{border-style:solid;border-width:1px;border-color:#e6e6e6;margin-bottom:1.25em;padding:1.25em;background:#fff;-webkit-border-radius:4px;border-radius:4px}
 .exampleblock>.content>:first-child{margin-top:0}
@@ -217,7 +218,7 @@ table.tableblock #preamble>.sectionbody>[class="paragraph"]:first-of-type p{font
 .sidebarblock>:last-child{margin-bottom:0}
 .sidebarblock>.content>.title{color:#7a2518;margin-top:0;text-align:center}
 .exampleblock>.content>:last-child>:last-child,.exampleblock>.content .olist>ol>li:last-child>:last-child,.exampleblock>.content .ulist>ul>li:last-child>:last-child,.exampleblock>.content .qlist>ol>li:last-child>:last-child,.sidebarblock>.content>:last-child>:last-child,.sidebarblock>.content .olist>ol>li:last-child>:last-child,.sidebarblock>.content .ulist>ul>li:last-child>:last-child,.sidebarblock>.content .qlist>ol>li:last-child>:last-child{margin-bottom:0}
-.literalblock pre,.listingblock>.content>pre{-webkit-border-radius:4px;border-radius:4px;word-wrap:break-word;overflow-x:auto;padding:1em;font-size:.8125em}
+.literalblock pre,.listingblock>.content>pre{-webkit-border-radius:4px;border-radius:4px;overflow-x:auto;padding:1em;font-size:.8125em}
 @media screen and (min-width:768px){.literalblock pre,.listingblock>.content>pre{font-size:.90625em}}
 @media screen and (min-width:1280px){.literalblock pre,.listingblock>.content>pre{font-size:1em}}
 .literalblock pre,.listingblock>.content>pre:not(.highlight),.listingblock>.content>pre[class="highlight"],.listingblock>.content>pre[class^="highlight "]{background:#f7f7f8}
@@ -263,21 +264,20 @@ pre.pygments .lineno::before{content:"";margin-right:-.125em}
 .quoteblock.excerpt,.quoteblock .quoteblock{margin-left:0}
 .quoteblock.excerpt blockquote,.quoteblock.excerpt p,.quoteblock .quoteblock blockquote,.quoteblock .quoteblock p{color:inherit;font-size:1.0625rem}
 .quoteblock.excerpt .attribution,.quoteblock .quoteblock .attribution{color:inherit;text-align:left;margin-right:0}
-table.tableblock{max-width:100%;border-collapse:separate}
 p.tableblock:last-child{margin-bottom:0}
+td.tableblock>.content{margin-bottom:1.25em;word-wrap:anywhere}
 td.tableblock>.content>:last-child{margin-bottom:-1.25em}
-td.tableblock>.content>:last-child.sidebarblock{margin-bottom:0}
 table.tableblock,th.tableblock,td.tableblock{border:0 solid #dedede}
-table.grid-all>thead>tr>.tableblock,table.grid-all>tbody>tr>.tableblock{border-width:0 1px 1px 0}
-table.grid-all>tfoot>tr>.tableblock{border-width:1px 1px 0 0}
-table.grid-cols>*>tr>.tableblock{border-width:0 1px 0 0}
-table.grid-rows>thead>tr>.tableblock,table.grid-rows>tbody>tr>.tableblock{border-width:0 0 1px}
-table.grid-rows>tfoot>tr>.tableblock{border-width:1px 0 0}
-table.grid-all>*>tr>.tableblock:last-child,table.grid-cols>*>tr>.tableblock:last-child{border-right-width:0}
-table.grid-all>tbody>tr:last-child>.tableblock,table.grid-all>thead:last-child>tr>.tableblock,table.grid-rows>tbody>tr:last-child>.tableblock,table.grid-rows>thead:last-child>tr>.tableblock{border-bottom-width:0}
+table.grid-all>*>tr>*{border-width:1px}
+table.grid-cols>*>tr>*{border-width:0 1px}
+table.grid-rows>*>tr>*{border-width:1px 0}
 table.frame-all{border-width:1px}
+table.frame-ends{border-width:1px 0}
 table.frame-sides{border-width:0 1px}
-table.frame-topbot,table.frame-ends{border-width:1px 0}
+table.frame-none>colgroup+*>:first-child>*,table.frame-sides>colgroup+*>:first-child>*{border-top-width:0}
+table.frame-none>:last-child>:last-child>*,table.frame-sides>:last-child>:last-child>*{border-bottom-width:0}
+table.frame-none>*>tr>:first-child,table.frame-ends>*>tr>:first-child{border-left-width:0}
+table.frame-none>*>tr>:last-child,table.frame-ends>*>tr>:last-child{border-right-width:0}
 table.stripes-all tr,table.stripes-odd tr:nth-of-type(odd),table.stripes-even tr:nth-of-type(even),table.stripes-hover tr:hover{background:#f8f8f7}
 th.halign-left,td.halign-left{text-align:left}
 th.halign-right,td.halign-right{text-align:right}
@@ -286,7 +286,7 @@ th.valign-top,td.valign-top{vertical-align:top}
 th.valign-bottom,td.valign-bottom{vertical-align:bottom}
 th.valign-middle,td.valign-middle{vertical-align:middle}
 table thead th,table tfoot th{font-weight:bold}
-tbody tr th{display:table-cell;line-height:1.6;background:#f7f8f7}
+tbody tr th{background:#f7f8f7}
 tbody tr th,tbody tr th p,tfoot tr th,tfoot tr th p{color:rgba(0,0,0,.8);font-weight:bold}
 p.tableblock>code:only-child{background:none;padding:0}
 p.tableblock{font-size:1em}
@@ -315,6 +315,7 @@ ol.lowergreek{list-style-type:lower-greek}
 .hdlist>table>tbody>tr,.colist>table>tbody>tr{background:none}
 td.hdlist1,td.hdlist2{vertical-align:top;padding:0 .625em}
 td.hdlist1{font-weight:bold;padding-bottom:1.25em}
+td.hdlist2{word-wrap:anywhere}
 .literalblock+.colist,.listingblock+.colist{margin-top:-.5em}
 .colist td:not([class]):first-child{padding:.4em .75em 0;line-height:1;vertical-align:top}
 .colist td:not([class]):first-child img{max-width:none}
@@ -387,7 +388,7 @@ a span.icon>.fa{cursor:inherit}
 .admonitionblock td.icon .icon-warning::before{content:"\f071";color:#bf6900}
 .admonitionblock td.icon .icon-caution::before{content:"\f06d";color:#bf3400}
 .admonitionblock td.icon .icon-important::before{content:"\f06a";color:#bf0000}
-.conum[data-value]{display:inline-block;color:#fff!important;background:rgba(0,0,0,.8);-webkit-border-radius:100px;border-radius:100px;text-align:center;font-size:.75em;width:1.67em;height:1.67em;line-height:1.67em;font-family:"Open Sans","DejaVu Sans",sans-serif;font-style:normal;font-weight:bold}
+.conum[data-value]{display:inline-block;color:#fff!important;background:rgba(0,0,0,.8);-webkit-border-radius:50%;border-radius:50%;text-align:center;font-size:.75em;width:1.67em;height:1.67em;line-height:1.67em;font-family:"Open Sans","DejaVu Sans",sans-serif;font-style:normal;font-weight:bold}
 .conum[data-value] *{color:#fff!important}
 .conum[data-value]+b{display:none}
 .conum[data-value]::after{content:attr(data-value)}
@@ -414,6 +415,7 @@ thead{display:table-header-group}
 svg{max-width:100%}
 p,blockquote,dt,td.content{font-size:1em;orphans:3;widows:3}
 h2,h3,#toctitle,.sidebarblock>.content>.title{page-break-after:avoid}
+#header,#content,#footnotes,#footer{max-width:none}
 #toc,.sidebarblock,.exampleblock>.content{background:none!important}
 #toc{border-bottom:1px solid #dddddf!important;padding-bottom:0!important}
 body.book #header{text-align:center}
@@ -438,6 +440,23 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 @media amzn-kf8{#header,#content,#footnotes,#footer{padding:0}}
 </style>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<meta name="keywords" content="git, github, git_basics, git bash, basics of git, basics of github">
+<meta name="description" content="The basics of Git and GitHub!">
+<meta name="theme-color" content="#f05133">
+<meta property="og:site_name" content="git_basics">
+<meta property="og:title" content="git_basics">
+<meta property="og:type" content="website">
+<meta property="og:description" content="The basics of Git and GitHub-like services!">
+<meta property="og:url" content="https://harshkapadia2.github.io/git_basics/">
+<meta property="og:image" content="https://res.cloudinary.com/harsh-kapadia/image/upload/v1611734601/git_basics_preview_2_rps4cq.png">
+
+<link rel="stylesheet" href="src/static/css/pwa_install.css">
+
+<link rel="apple-touch-icon" href="src/static/img/icon-192x192.png">
+
+<link rel="manifest" href="src/manifest.json">
+
+<script defer src="src/static/js/main.js"></script>
 </head>
 <body class="article toc2 toc-left">
 <div id="header">
@@ -543,7 +562,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <h2 id="_abstract">Abstract</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>This web site contains some basic concepts, commands &amp; conventions for Git &amp; GitHub.</p>
+<p>A web site for the basics of Git and GitHub-like services.</p>
 </div>
 </div>
 </div>
@@ -551,27 +570,16 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <h2 id="_preface">Preface</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The open source community is amazing and very friendly. Contributing to it is always exciting if done in the spirit of improving the community and enjoying oneself.</p>
-</div>
-<div class="quoteblock">
-<blockquote>
-We rise by lifting others.
-</blockquote>
-<div class="attribution">
-&#8212; Robert Ingersoll
-</div>
+<p>The open source community is inclusive and friendly. Contributing to it is always exciting if done in the spirit of improving the community and enjoying oneself.</p>
 </div>
 <div class="paragraph">
-<p>Knowing the basics of Git &amp; GitHub is the only prerequisite to start contributing to the FOSS (free &amp; open source software) community and learning Git sometimes feels like a dauting task, because it is a little complicated. So to make this task easier, we have made this easy guide that will help anyone get started and keep helping them along their open source journey.</p>
+<p>Knowing the basics of Git and GitHub is the only prerequisite to start contributing and learning them sometimes feels like a daunting task. The aim of this guide is to help anyone get started with open source and keep helping them along their journey.</p>
 </div>
 <div class="paragraph">
-<p>This guide is made from a lot of resources collected over time. They have been hyperlinked wherever possible &amp; if not, they have been included in the <a href="#_misc">misc</a> section at the end of the book.</p>
+<p><strong>This project is open source</strong> and the repository can be found at <a href="https://github.com/HarshKapadia2/git_basics" class="bare external" target="_blank" rel="noopener">https://github.com/HarshKapadia2/git_basics</a>. Contributions to keep it updated and error-free are appreciated and issues and pull requests are most welcome!</p>
 </div>
 <div class="paragraph">
-<p>We would love everyone&#8217;s help to keep this guide updated and error free. Your [Pull Requests] and suggestions are most welcome! The link to the GitHub repository is <a href="https://github.com/HarshKapadia2/git_basics" class="bare">https://github.com/HarshKapadia2/git_basics</a>.</p>
-</div>
-<div class="paragraph">
-<p>For any further questions, please feel free to contact the author, Harsh Kapadia, via Twitter <a href="https://twitter.com/harshgkapadia" target="_blank" rel="noopener">@harshgkapadia</a>, <a href="https://www.linkedin.com/in/harsh-kapadia-426999175/" target="_blank" rel="noopener">LinkedIn</a> or e-mail <a href="mailto:harshgkapadia@gmail.com">harshgkapadia@gmail.com</a>.</p>
+<p>For further questions, please feel free to contact the author, Harsh Kapadia, via <a href="https://otc.zulipchat.com" target="_blank" rel="noopener">OTC</a>, <a href="https://twitter.com/harshgkapadia" target="_blank" rel="noopener">Twitter</a>, <a href="https://www.linkedin.com/in/harshgkapadia/" target="_blank" rel="noopener">LinkedIn</a> or e-mail (<a href="mailto:harshgkapadia@gmail.com">harshgkapadia@gmail.com</a>).</p>
 </div>
 <div class="admonitionblock important">
 <table>
@@ -580,7 +588,16 @@ We rise by lifting others.
 <i class="fa icon-important" title="Important"></i>
 </td>
 <td class="content">
-Watch <a href="https://www.youtube.com/watch?v=HF12-91iazM" target="_blank" rel="noopener">git_basics - a crash course on Git &amp; GitHub</a> by the author, Harsh Kapadia, to get started!
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://www.youtube.com/watch?v=HF12-91iazM" target="_blank" rel="noopener">Git and GitHub crash course</a></p>
+</li>
+<li>
+<p><a href="https://www.youtube.com/watch?v=uJdFNksgKJA" target="_blank" rel="noopener">Hacktoberfest, Open Source and Pull Requests</a></p>
+</li>
+</ul>
+</div>
 </td>
 </tr>
 </table>
@@ -593,6 +610,18 @@ Watch <a href="https://www.youtube.com/watch?v=HF12-91iazM" target="_blank" rel=
 </td>
 <td class="content">
 One might want to familiarize themselves with some <a href="#_terms">Git terms</a> before starting, although they will be linked at places where they are required as well.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+GitHub is gradually renaming the default branch of repositories from <code>master</code> to <code>main</code>. The default branch name for new repositories is now <code>main</code>. Existing repositories are not impacted by this change. Later this year, one will be able to rename the default branch for existing repositories. For more details, check the <a href="https://github.com/github/renaming" target="_blank" rel="noopener">renaming repo</a> by GitHub.
 </td>
 </tr>
 </table>
@@ -635,7 +664,7 @@ One might want to familiarize themselves with some <a href="#_terms">Git terms</
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="./src/images/lvcs.jpg" alt="500" width="500">
+<img src="./src/static/img/lvcs.jpg" alt="500" width="500">
 </div>
 </div>
 </div>
@@ -653,7 +682,7 @@ One might want to familiarize themselves with some <a href="#_terms">Git terms</
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="./src/images/cvcs.png" alt="450" width="450">
+<img src="./src/static/img/cvcs.png" alt="450" width="450">
 </div>
 </div>
 </div>
@@ -674,7 +703,7 @@ One might want to familiarize themselves with some <a href="#_terms">Git terms</
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="./src/images/dvcs.png" alt="500" width="500">
+<img src="./src/static/img/dvcs.png" alt="500" width="500">
 </div>
 </div>
 <hr>
@@ -1094,7 +1123,7 @@ Enter the full name and the e-mail ID registered with your GitHub account.
 <hr>
 <div class="imageblock thumb">
 <div class="content">
-<img src="./src/images/git-local-remote.png" alt="Git local &amp; remote commands chart #1">
+<img src="./src/static/img/git-local-remote.png" alt="Git local &amp; remote commands chart #1">
 </div>
 <div class="title">Git local &amp; remote commands chart #1</div>
 </div>
@@ -1299,28 +1328,34 @@ Enter the full name and the e-mail ID registered with your GitHub account.
 <div class="ulist">
 <ul>
 <li>
-<p><code>??</code> implies untracked files.</p>
+<p><code>??</code> implies an untracked file, ie, a file that has never been staged.</p>
 </li>
 <li>
-<p><code>A</code> implies newly staged files.</p>
+<p><code>A</code> implies a newly staged (added) file, ie, a file that is now staged, but has never been staged before.</p>
 </li>
 <li>
-<p><code>M (red)</code> implies modifications in a staged file that has not been staged again.</p>
+<p><code>M (red)</code> implies unstaged modifications in a committed file.</p>
 </li>
 <li>
-<p><code>M (green)</code> implies modifications in a staged file that has been staged again.</p>
+<p><code>M (green)</code> implies staged modifications in a committed file (but the new modifications have not been committed yet).</p>
 </li>
 <li>
-<p><code>MM (green and red)</code> implies modifications in a file that has been staged with modifications, but not yet committed.</p>
+<p><code>AM (green and red respectively)</code> implies new modifications in a newly staged uncommitted file.</p>
 </li>
 <li>
-<p><code>D (red)</code> implies the deletion of a staged file that has not been staged again.</p>
+<p><code>MM (green and red respectively)</code> implies new modifications in a committed file that has been staged with modifications, without committing the previous changes.</p>
 </li>
 <li>
-<p><code>D (green)</code> implies the deletion of a staged file that has been staged again.</p>
+<p><code>D (red)</code> implies the renaming/moving/both (renaming and moving)/deletion of a staged file that has not been staged again.</p>
 </li>
 <li>
-<p><code>R (green)</code> implies the renaming/moving/both of a file that has been staged again.</p>
+<p><code>D (green)</code> implies the deletion of a staged file.</p>
+</li>
+<li>
+<p><code>R (green)</code> implies the renaming/moving/both of a staged file.</p>
+</li>
+<li>
+<p><code>AD (green and red respectively)</code> implies the renaming/moving/both (renaming and moving)/deletion of a newly staged uncommitted file that has not been staged again.</p>
 </li>
 </ul>
 </div>
@@ -1334,7 +1369,16 @@ Enter the full name and the e-mail ID registered with your GitHub account.
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-Once a file is renamed, moved or both renamed and moved, it is marked as deleted (red coloured <code>D</code>) by Git and a new untracked file (red coloured <code>??</code>) is shown in its place when <code>git status -s</code> is run. Once the <a href="#_git_add"><code>git add</code></a> command is run, Git realises that the file has been renamed/moved/both and displays a green coloured <code>R</code> when <code>git status -s</code> is run again.
+<div class="ulist">
+<ul>
+<li>
+<p>Once a file is renamed, moved or both renamed and moved, it is marked as deleted (red coloured <code>D</code>) by Git and a new untracked file (red coloured <code>??</code>) is shown in its place when <code>git status -s</code> is run. Once the <a href="#_git_add"><code>git add</code></a> command is run once again, Git realises that the file has been renamed/moved/both and displays a green coloured <code>R</code> when <code>git status -s</code> is run again.</p>
+</li>
+<li>
+<p>If <code>AD</code> is displayed, the newly staged file can have been renamed, moved, both (renamed and moved) or deleted. In the case of renaming, moving or both, the original file gets forgotten in the next staging and the new file is added. In the case of deletion, the file is simply forgotten in the next staging.</p>
+</li>
+</ul>
+</div>
 </td>
 </tr>
 </table>
@@ -1347,7 +1391,7 @@ Once a file is renamed, moved or both renamed and moved, it is marked as deleted
 <h3 id="_git_commit">git commit</h3>
 <div class="imageblock">
 <div class="content">
-<img src="./src/images/working-of-commit.jpeg" alt="working of commit">
+<img src="./src/static/img/working-of-commit.jpeg" alt="working of commit">
 </div>
 </div>
 <div class="sect3">
@@ -1813,7 +1857,7 @@ This command re-writes the history of the repository as it entirely replaces the
 <hr>
 <div class="imageblock thumb">
 <div class="content">
-<img src="./src/images/git-local-remote-2.png" alt="Git local &amp; remote commands chart #2">
+<img src="./src/static/img/git-local-remote-2.png" alt="Git local &amp; remote commands chart #2">
 </div>
 <div class="title">Git local &amp; remote commands chart #2</div>
 </div>
@@ -2146,7 +2190,7 @@ The branch can be safely deleted.
 </div>
 <div class="imageblock thumb">
 <div class="content">
-<img src="./src/images/types-of-merges.jpg" alt="Types of merges">
+<img src="./src/static/img/types-of-merges.jpg" alt="Types of merges">
 </div>
 <div class="title">Fast forward and three-way merges</div>
 </div>
@@ -2370,7 +2414,7 @@ If the currently checked out branch is to be deleted, <a href="#_git_checkout">s
 </div>
 </div>
 <div class="sect4">
-<h5 id="_m_new_branch_name">-m &lt;new_branch_name&gt;</h5>
+<h5 id="_m_new_branch_name_or_m_new_branch_name">'-m &lt;new_branch_name&gt;' or '-M &lt;new_branch_name&gt;'</h5>
 <div class="ulist">
 <ul>
 <li>
@@ -2721,13 +2765,13 @@ This command only removes the connection between the local and remote repo. It d
 </div>
 <div class="imageblock thumb">
 <div class="content">
-<img src="./src/images/git-push.jpeg" alt="Git push illustration">
+<img src="./src/static/img/git-push.jpeg" alt="Git push illustration">
 </div>
 <div class="title">What does git push do?</div>
 </div>
 <div class="imageblock thumb">
 <div class="content">
-<img src="./src/images/fast-forward-merge.png" alt="Fast forward merge">
+<img src="./src/static/img/fast-forward-merge.png" alt="Fast forward merge">
 </div>
 <div class="title">How a fast forward merge takes place with <code>git push</code></div>
 </div>
@@ -3121,7 +3165,7 @@ It is recommended to go through this section only if the reader has some experie
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="./src/images/git-init.jpg" alt="600" width="600">
+<img src="./src/static/img/git-init.jpg" alt="600" width="600">
 </div>
 </div>
 <div class="paragraph">
@@ -3129,7 +3173,7 @@ It is recommended to go through this section only if the reader has some experie
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="./src/images/du-c-1.jpg" alt="600" width="600">
+<img src="./src/static/img/du-c-1.jpg" alt="600" width="600">
 </div>
 </div>
 <div class="sect3">
@@ -3139,7 +3183,7 @@ It is recommended to go through this section only if the reader has some experie
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="./src/images/touch-master_file_1.jpg" alt="600" width="600">
+<img src="./src/static/img/touch-master_file_1.jpg" alt="600" width="600">
 </div>
 </div>
 <div class="paragraph">
@@ -3147,7 +3191,7 @@ It is recommended to go through this section only if the reader has some experie
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="./src/images/ls-a-1.jpg" alt="600" width="600">
+<img src="./src/static/img/ls-a-1.jpg" alt="600" width="600">
 </div>
 </div>
 <div class="paragraph">
@@ -3155,7 +3199,7 @@ It is recommended to go through this section only if the reader has some experie
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="./src/images/du-c-2.jpg" alt="600" width="600">
+<img src="./src/static/img/du-c-2.jpg" alt="600" width="600">
 </div>
 </div>
 <div class="paragraph">
@@ -3166,7 +3210,7 @@ It is recommended to go through this section only if the reader has some experie
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="./src/images/dir-1.jpg" alt="600" width="600">
+<img src="./src/static/img/dir-1.jpg" alt="600" width="600">
 </div>
 </div>
 <div class="paragraph">
@@ -3177,12 +3221,12 @@ It is recommended to go through this section only if the reader has some experie
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="./src/images/add-to-master_file_1-1.jpg" alt="600" width="600">
+<img src="./src/static/img/add-to-master_file_1-1.jpg" alt="600" width="600">
 </div>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="./src/images/edit-master_file_1-1.jpg" alt="600" width="600">
+<img src="./src/static/img/edit-master_file_1-1.jpg" alt="600" width="600">
 </div>
 </div>
 <div class="paragraph">
@@ -3193,7 +3237,7 @@ It is recommended to go through this section only if the reader has some experie
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="./src/images/cat-1.jpg" alt="600" width="600">
+<img src="./src/static/img/cat-1.jpg" alt="600" width="600">
 </div>
 </div>
 <div class="paragraph">
@@ -3201,7 +3245,7 @@ It is recommended to go through this section only if the reader has some experie
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="./src/images/de-compressed.jpg" alt="600" width="600">
+<img src="./src/static/img/de-compressed.jpg" alt="600" width="600">
 </div>
 </div>
 <div class="paragraph">
@@ -3281,7 +3325,7 @@ If <code>blob 16\0Git is amazing!</code> is hashed using SHA1, the same hash (<c
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="./src/images/commit-master_file_1-1.jpg" alt="600" width="600">
+<img src="./src/static/img/commit-master_file_1-1.jpg" alt="600" width="600">
 </div>
 </div>
 <div class="paragraph">
@@ -3292,7 +3336,7 @@ If <code>blob 16\0Git is amazing!</code> is hashed using SHA1, the same hash (<c
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="./src/images/cat-file-t-1.jpg" alt="600" width="600">
+<img src="./src/static/img/cat-file-t-1.jpg" alt="600" width="600">
 </div>
 </div>
 <div class="paragraph">
@@ -3303,7 +3347,7 @@ If <code>blob 16\0Git is amazing!</code> is hashed using SHA1, the same hash (<c
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="./src/images/cat-file-p-1.jpg" alt="600" width="600">
+<img src="./src/static/img/cat-file-p-1.jpg" alt="600" width="600">
 </div>
 </div>
 <div class="paragraph">
@@ -3365,7 +3409,7 @@ If <code>blob 16\0Git is amazing!</code> is hashed using SHA1, the same hash (<c
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="./src/images/cat-file-p-2.jpg" alt="600" width="600">
+<img src="./src/static/img/cat-file-p-2.jpg" alt="600" width="600">
 </div>
 </div>
 <div class="paragraph">
@@ -3398,7 +3442,7 @@ If <code>blob 16\0Git is amazing!</code> is hashed using SHA1, the same hash (<c
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="./src/images/connection-graph-1.png" alt="600" width="600">
+<img src="./src/static/img/connection-graph-1.png" alt="600" width="600">
 </div>
 </div>
 <div class="admonitionblock note">
@@ -3421,7 +3465,7 @@ The blob <code>e69de</code> has been modified to blob <code>1a385</code> and so 
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="./src/images/touch-master_file_2.jpg" alt="600" width="600">
+<img src="./src/static/img/touch-master_file_2.jpg" alt="600" width="600">
 </div>
 </div>
 <div class="paragraph">
@@ -3429,7 +3473,7 @@ The blob <code>e69de</code> has been modified to blob <code>1a385</code> and so 
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="./src/images/cat-file-p-3.jpg" alt="600" width="600">
+<img src="./src/static/img/cat-file-p-3.jpg" alt="600" width="600">
 </div>
 </div>
 <div class="paragraph">
@@ -3437,7 +3481,7 @@ The blob <code>e69de</code> has been modified to blob <code>1a385</code> and so 
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="./src/images/head-1.jpg" alt="600" width="600">
+<img src="./src/static/img/head-1.jpg" alt="600" width="600">
 </div>
 </div>
 <div class="paragraph">
@@ -3448,7 +3492,7 @@ The blob <code>e69de</code> has been modified to blob <code>1a385</code> and so 
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="./src/images/cat-file-p-4.jpg" alt="600" width="600">
+<img src="./src/static/img/cat-file-p-4.jpg" alt="600" width="600">
 </div>
 </div>
 <div class="paragraph">
@@ -3456,7 +3500,7 @@ The blob <code>e69de</code> has been modified to blob <code>1a385</code> and so 
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="./src/images/connection-graph-2.png" alt="600" width="600">
+<img src="./src/static/img/connection-graph-2.png" alt="600" width="600">
 </div>
 </div>
 </div>
@@ -3467,7 +3511,7 @@ The blob <code>e69de</code> has been modified to blob <code>1a385</code> and so 
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="./src/images/mkdir_1.jpg" alt="600" width="600">
+<img src="./src/static/img/mkdir_1.jpg" alt="600" width="600">
 </div>
 </div>
 <div class="paragraph">
@@ -3478,7 +3522,7 @@ The blob <code>e69de</code> has been modified to blob <code>1a385</code> and so 
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="./src/images/cat-file-p-5.jpg" alt="600" width="600">
+<img src="./src/static/img/cat-file-p-5.jpg" alt="600" width="600">
 </div>
 </div>
 <div class="paragraph">
@@ -3489,7 +3533,7 @@ The blob <code>e69de</code> has been modified to blob <code>1a385</code> and so 
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="./src/images/cat-file-p-6.jpg" alt="600" width="600">
+<img src="./src/static/img/cat-file-p-6.jpg" alt="600" width="600">
 </div>
 </div>
 <div class="paragraph">
@@ -3500,7 +3544,7 @@ The blob <code>e69de</code> has been modified to blob <code>1a385</code> and so 
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="./src/images/tree-1.png" alt="600" width="600">
+<img src="./src/static/img/tree-1.png" alt="600" width="600">
 </div>
 </div>
 <div class="paragraph">
@@ -3508,7 +3552,7 @@ The blob <code>e69de</code> has been modified to blob <code>1a385</code> and so 
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="./src/images/connection-graph-3.png" alt="600" width="600">
+<img src="./src/static/img/connection-graph-3.png" alt="600" width="600">
 </div>
 </div>
 </div>
@@ -3519,12 +3563,12 @@ The blob <code>e69de</code> has been modified to blob <code>1a385</code> and so 
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="./src/images/mv-1.jpg" alt="600" width="600">
+<img src="./src/static/img/mv-1.jpg" alt="600" width="600">
 </div>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="./src/images/add-1.jpg" alt="600" width="600">
+<img src="./src/static/img/add-1.jpg" alt="600" width="600">
 </div>
 </div>
 <div class="paragraph">
@@ -3535,7 +3579,7 @@ The blob <code>e69de</code> has been modified to blob <code>1a385</code> and so 
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="./src/images/cat-file-p-7.jpg" alt="600" width="600">
+<img src="./src/static/img/cat-file-p-7.jpg" alt="600" width="600">
 </div>
 </div>
 <div class="paragraph">
@@ -3546,7 +3590,7 @@ The blob <code>e69de</code> has been modified to blob <code>1a385</code> and so 
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="./src/images/connection-graph-4.png" alt="600" width="600">
+<img src="./src/static/img/connection-graph-4.png" alt="600" width="600">
 </div>
 </div>
 </div>
@@ -3557,12 +3601,12 @@ The blob <code>e69de</code> has been modified to blob <code>1a385</code> and so 
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="./src/images/add-2.jpg" alt="600" width="600">
+<img src="./src/static/img/add-2.jpg" alt="600" width="600">
 </div>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="./src/images/cat-file-p-8.jpg" alt="600" width="600">
+<img src="./src/static/img/cat-file-p-8.jpg" alt="600" width="600">
 </div>
 </div>
 <div class="paragraph">
@@ -3570,7 +3614,7 @@ The blob <code>e69de</code> has been modified to blob <code>1a385</code> and so 
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="./src/images/add-3.jpg" alt="600" width="600">
+<img src="./src/static/img/add-3.jpg" alt="600" width="600">
 </div>
 </div>
 <div class="paragraph">
@@ -3581,7 +3625,7 @@ The blob <code>e69de</code> has been modified to blob <code>1a385</code> and so 
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="./src/images/du-c-3.jpg" alt="600" width="600">
+<img src="./src/static/img/du-c-3.jpg" alt="600" width="600">
 </div>
 </div>
 <div class="paragraph">
@@ -3629,7 +3673,7 @@ The directory content size (1376 kb) is greater than the picture size (1374 kb) 
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="./src/images/du-c-3.jpg" alt="600" width="600">
+<img src="./src/static/img/du-c-3.jpg" alt="600" width="600">
 </div>
 </div>
 <div class="paragraph">
@@ -3639,7 +3683,7 @@ The directory content size (1376 kb) is greater than the picture size (1374 kb) 
 <p>Aggressive garbage collection will be used to carry out Delta compression and then <code>du -c</code> to view the changes.</p>
 </div>
 <div class="paragraph">
-<p><span class="image"><img src="./src/images/du-c-4.jpg" alt="600" width="600"></span></p>
+<p><span class="image"><img src="./src/static/img/du-c-4.jpg" alt="600" width="600"></span></p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -3665,7 +3709,7 @@ The total size of the <code>.git</code> directory went down from 4220kb (seen in
 <p>Look at the contents of <code>./.git/objects/pack</code>.</p>
 <div class="imageblock">
 <div class="content">
-<img src="./src/images/dir-2.jpg" alt="800" width="800">
+<img src="./src/static/img/dir-2.jpg" alt="800" width="800">
 </div>
 </div>
 <div class="paragraph">
@@ -3676,7 +3720,7 @@ The total size of the <code>.git</code> directory went down from 4220kb (seen in
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="./src/images/verify-pack-1.jpg" alt="800" width="800">
+<img src="./src/static/img/verify-pack-1.jpg" alt="800" width="800">
 </div>
 </div>
 <div class="paragraph">
@@ -3758,7 +3802,7 @@ On pushing and/or pulling, these files are not deleted, just a pack file and an 
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="./src/images/log-1.jpg" alt="log 1">
+<img src="./src/static/img/log-1.jpg" alt="log 1">
 </div>
 </div>
 <div class="sidebarblock">
@@ -4502,7 +4546,7 @@ Add a link to the `CODE_OF_CONDUCT.md` file.</code></pre>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="./src/images/working-of-commit.jpeg" alt="working of commit">
+<img src="./src/static/img/working-of-commit.jpeg" alt="working of commit">
 </div>
 </div>
 <div class="sidebarblock">
@@ -4622,7 +4666,7 @@ HEAD is contextual. It will point to the latest commit in the current branch.
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="./src/images/working-of-commit.jpeg" alt="working of commit">
+<img src="./src/static/img/working-of-commit.jpeg" alt="working of commit">
 </div>
 </div>
 <div class="ulist">
@@ -4686,7 +4730,7 @@ ref: refs/heads/test_branch</pre>
 <h3 id="_branches">Branches</h3>
 <div class="imageblock">
 <div class="content">
-<img src="./src/images/branches.png" alt="branches">
+<img src="./src/static/img/branches.png" alt="branches">
 </div>
 </div>
 <div class="ulist">
@@ -4859,12 +4903,22 @@ Follow correct <a href="#_git_commit">commit message</a> structure. Eg: <code>:b
 <div class="sect2">
 <h3 id="_resources">Resources</h3>
 <div class="sect3">
-<h4 id="_getting_started_with_git_github">Getting started with Git &amp; GitHub</h4>
+<h4 id="_sessions_by_the_author">Sessions by the author</h4>
 <div class="ulist">
 <ul>
 <li>
-<p><a href="https://www.youtube.com/watch?v=HF12-91iazM" target="_blank" rel="noopener">Crash course by Harsh Kapadia</a>, the author.</p>
+<p><a href="https://www.youtube.com/watch?v=HF12-91iazM" target="_blank" rel="noopener">Git and GitHub crash course</a></p>
 </li>
+<li>
+<p><a href="https://www.youtube.com/watch?v=uJdFNksgKJA" target="_blank" rel="noopener">Hacktoberfest, Open Source and Pull Requests</a></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_getting_started_with_git_and_github">Getting started with Git and GitHub</h4>
+<div class="ulist">
+<ul>
 <li>
 <p><a href="https://www.youtube.com/watch?v=SWYqp7iY_Tc&amp;feature=youtu.be" target="_blank" rel="noopener">Crash course by Brad Traversy</a></p>
 </li>
@@ -4897,6 +4951,9 @@ Follow correct <a href="#_git_commit">commit message</a> structure. Eg: <code>:b
 <li>
 <p><a href="https://www.git-scm.com/book/en/v2" target="_blank" rel="noopener">Official (free) book - Pro Git (v2)</a></p>
 </li>
+<li>
+<p><a href="https://try.github.io" target="_blank" rel="noopener">GitHub&#8217;s resources for Git</a></p>
+</li>
 </ul>
 </div>
 </div>
@@ -4922,6 +4979,19 @@ Follow correct <a href="#_git_commit">commit message</a> structure. Eg: <code>:b
 </li>
 <li>
 <p><a href="https://explainshell.com/" target="_blank" rel="noopener">Explainshel.com</a></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_browser_extensions_for_github">Browser extensions for GitHub</h4>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/sindresorhus/refined-github#install" target="_blank" rel="noopener">Refined GitHub</a> - Simplifies the GitHub interface and adds useful features (available for Chrome, Edge, Firefox and Opera)</p>
+</li>
+<li>
+<p><a href="https://gitzip.org/#extension" target="_blank" rel="noopener">GitZip for GitHub</a> - Only download required sub-folders/files from GitHub repos (available for Chrome, Edge and Firefox)</p>
 </li>
 </ul>
 </div>
@@ -5018,6 +5088,14 @@ Kindness always wins.
 </div>
 <div class="quoteblock">
 <blockquote>
+We rise by lifting others.
+</blockquote>
+<div class="attribution">
+&#8212; Robert Ingersoll
+</div>
+</div>
+<div class="quoteblock">
+<blockquote>
 Alone, we can do so little;
 Together we can do so much.
 </blockquote>
@@ -5025,6 +5103,13 @@ Together we can do so much.
 &#8212; Helen Keller
 </div>
 </div>
+	<div class="pwa-install-div hidden">
+		<div id="pwa-install-text">Ready for offline use!</div>
+		<button id="pwa-install-btn">Install</button>
+		<button id="pwa-install-dismiss">
+			<img src="src/static/img/clear_cross.svg" alt="X">
+		</button>
+	</div>
 </div>
 </div>
 </div>
@@ -5033,7 +5118,7 @@ Together we can do so much.
 <div id="footer">
 <div id="footer-text">
 Version 2<br>
-Last updated 2020-10-12 16:17:24 UTC
+Last updated 2021-01-27 16:20:28 UTC
 </div>
 </div>
 </body>
