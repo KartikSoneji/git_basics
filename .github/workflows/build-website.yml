@@ -50,7 +50,8 @@ jobs:
         run: |
           # Skip deploy if not on master
           if [ "${BRANCH_NAME}" != "master" ]; then
-            echo "Skipping deployment since branch is not master"
+            echo "Skipping deployment since branch is '${BRANCH_NAME}', not master"
+            set
             exit 0
           fi
           
